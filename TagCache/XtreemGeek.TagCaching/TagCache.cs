@@ -196,10 +196,10 @@ namespace XtreemGeek.TagCaching
         /// <summary>
         /// to invalidate item(s) from cache based on tag list
         /// </summary>
-        /// <param name="tagExpression">This spcecifies the tag combination that needs to be invalided</param>
+        /// <param name="tagList">This spcecifies the tag combination that needs to be invalided</param>
         public void Invalidate(List<string> tagList)
         {
-            Guard.Assert(tagList != null, "TagExpression cannot be null");
+            Guard.Assert(tagList != null, "TagList cannot be null");
 
             _cacheStore.Invalidate(new List<List<string>> { tagList });
         }
@@ -210,7 +210,7 @@ namespace XtreemGeek.TagCaching
         /// <param name="tag">This specifies the tag the needs to be invalided.</param>
         public void Invalidate(string tag)
         {
-            Guard.Assert(tag != null, "TagExpression cannot be null");
+            Guard.Assert(tag != null, "Tag cannot be null");
 
             _cacheStore.Invalidate(new List<List<string>> { new List<string> { tag } });
         }
