@@ -19,19 +19,19 @@ Example
     };
     
     fillCacheItems();
-    tagCache.Invalidate(new List<List<string>> { new List<string> { "Bike" } });  // invalidates all bikes
+    tagCache.Invalidate("Bike");  // invalidates all bikes
     
     fillCacheItems();
-    tagCache.Invalidate(new List<List<string>> { new List<string> { "Luxury" } });  // invalidates all luxury vehicles
+    tagCache.Invalidate("Luxury");  // invalidates all luxury vehicles
     
     fillCacheItems();
-    tagCache.Invalidate(new List<List<string>> { new List<string> { "Vehicle" } });  // invalidates all vehicles
+    tagCache.Invalidate("Vehicle");  // invalidates all vehicles
     
     fillCacheItems();
-    tagCache.Invalidate(new List<List<string>> { new List<string> { "Car", "Luxury" } });  // invalidates all luxury cars
+    tagCache.Invalidate(new List<string> { "Car", "Luxury" });  // invalidates all luxury cars
     
     fillCacheItems();
-    tagCache.Invalidate(new List<List<string>> { new List<string> { "Bike", "Economy" } });  // invalidates all economy bikes
+    tagCache.Invalidate(new List<string> { "Bike", "Economy" });  // invalidates all economy bikes
 
     fillCacheItems();
     tagCache.Invalidate(new List<List<string>> { 

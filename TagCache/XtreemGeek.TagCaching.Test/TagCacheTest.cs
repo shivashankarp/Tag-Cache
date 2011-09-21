@@ -25,7 +25,7 @@ namespace XtreemGeek.TagCaching.Test
             fillCacheItems();
 
             // invalidate all bikes
-            tagCache.Invalidate(new List<List<string>> { new List<string> { "Bike" } });
+            tagCache.Invalidate("Bike");
             Assert.IsNotNull(tagCache.Get("honda"));
             Assert.IsNotNull(tagCache.Get("lexus"));
             Assert.IsNull(tagCache.Get("harley"));
@@ -34,7 +34,7 @@ namespace XtreemGeek.TagCaching.Test
             fillCacheItems();
 
             // invalidate all luxury vehicles
-            tagCache.Invalidate(new List<List<string>> { new List<string> { "Luxury" } });
+            tagCache.Invalidate("Luxury");
             Assert.IsNotNull(tagCache.Get("honda"));
             Assert.IsNull(tagCache.Get("lexus"));
             Assert.IsNull(tagCache.Get("harley"));
@@ -43,7 +43,7 @@ namespace XtreemGeek.TagCaching.Test
             fillCacheItems();
 
             // invalidate all vehicles
-            tagCache.Invalidate(new List<List<string>> { new List<string> { "Vehicle" } });
+            tagCache.Invalidate("Vehicle");
             Assert.IsNull(tagCache.Get("honda"));
             Assert.IsNull(tagCache.Get("lexus"));
             Assert.IsNull(tagCache.Get("harley"));
@@ -52,7 +52,7 @@ namespace XtreemGeek.TagCaching.Test
             fillCacheItems();
 
             // invalidate all luxury cars
-            tagCache.Invalidate(new List<List<string>> { new List<string> { "Car", "Luxury" } });
+            tagCache.Invalidate(new List<string> { "Car", "Luxury" });
             Assert.IsNotNull(tagCache.Get("honda"));
             Assert.IsNull(tagCache.Get("lexus"));
             Assert.IsNotNull(tagCache.Get("harley"));
@@ -61,7 +61,7 @@ namespace XtreemGeek.TagCaching.Test
             fillCacheItems();
 
             // invalidate all economy bikes
-            tagCache.Invalidate(new List<List<string>> { new List<string> { "Bike", "Economy" } });
+            tagCache.Invalidate(new List<string> { "Bike", "Economy" });
             Assert.IsNotNull(tagCache.Get("honda"));
             Assert.IsNotNull(tagCache.Get("lexus"));
             Assert.IsNotNull(tagCache.Get("harley"));
